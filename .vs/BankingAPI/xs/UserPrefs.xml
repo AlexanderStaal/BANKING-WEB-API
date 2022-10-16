@@ -1,0 +1,43 @@
+﻿<Properties StartupConfiguration="{355E6FBD-B9CD-4E68-8B2F-29747ECBA3C5}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/alex/Projects/repo/BANKING-WEB-API/Controllers/UsersController.cs" relfile="Controllers/UsersController.cs" line="44" column="1" />
+      <Breakpoint file="/Users/alex/Projects/repo/BANKING-WEB-API/Controllers/UsersController.cs" relfile="Controllers/UsersController.cs" line="32" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.BankingAPI PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="appsettings.json">
+    <Files>
+      <File FileName="Controllers/UserController.cs" Line="64" Column="10" />
+      <File FileName="Controllers/LoginController.cs" Line="57" Column="1" />
+      <File FileName="Controllers/UsersController.cs" Line="40" Column="19" />
+      <File FileName="appsettings.json" Line="13" Column="11" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BankingAPI" expanded="True" selected="True">
+            <Node name="BankingAPI" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Context" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Helper" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Repositories" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

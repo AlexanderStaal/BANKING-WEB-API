@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 using System.Xml.Linq;
 
-namespace BankingWebAPI.Models
+namespace BankingWebAPI.Context
 {
     [Table("Transactions")]
     public class TransactionsHistory
@@ -13,8 +13,8 @@ namespace BankingWebAPI.Models
         [DataMember(Name = "key")]
         [Key]
         public int transactionId { get; set; }
-        public int accountFromNumber { get; set; }
-        public int accountToNumber { get; set; }
+        public int fromAccountNumber { get; set; }
+        public int toAccountNumber { get; set; }
         public DateTime transactionTime { get; set; }
         public double amountDebit { get; set; }
         public double fromAccountBalance { get; set; }
@@ -27,8 +27,8 @@ namespace BankingWebAPI.Models
         [Required]
         [DataMember(Name = "key")]
         [Key]
-        public int accountFromNumber { get; set; }
-        public int accountToNumber { get; set; }
+        public int fromAccountNumber { get; set; }
+        public int toAccountNumber { get; set; }
         public double amount { get; set; }
     }
 

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
-using BankingWebAPI.Models;
+using BankingWebAPI.Context;
 using BankingWebAPI.Data;
 using BankingWebAPI.Repositories;
 
@@ -37,7 +37,7 @@ namespace BankingWebAPI.Controllers
 
         [HttpPost]
         [Route("CreateAccount")]
-        public async Task<ActionResult> CreateAccount([FromBody] Accounts createAccountRequest)
+        public async Task<IActionResult> CreateAccount([FromBody] Accounts createAccountRequest)
         {
             var transaction = await _sPRepoitory.CreateAccount(createAccountRequest);
             return Ok(transaction);
@@ -46,7 +46,7 @@ namespace BankingWebAPI.Controllers
 
         [HttpGet]
         [Route("{accountNumber}")]
-        public async Task<ActionResult> GetAccount([FromRoute] int accountNumber)
+        public async Task<IActionResult> GetAccount([FromRoute] int accountNumber)
         {
             var account = await _accountContext.Accounts.FindAsync(accountNumber);
 

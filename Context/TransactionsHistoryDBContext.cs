@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace BankingWebAPI.Models
+namespace BankingWebAPI.Context
 {
     public partial class TransactionsHistoryDBContext : DbContext
     {
@@ -32,8 +32,8 @@ namespace BankingWebAPI.Models
             {
                 entity.ToTable("TransactionsHistory");
                 entity.Property(e => e.transactionId).HasColumnName("transactionId");
-                entity.Property(e => e.accountFromNumber).HasColumnName("accountFromNumber");
-                entity.Property(e => e.accountToNumber).HasColumnName("accountToNumber");
+                entity.Property(e => e.fromAccountNumber).HasColumnName("fromAccountNumber");
+                entity.Property(e => e.toAccountNumber).HasColumnName("toAccountNumber");
                 entity.Property(e => e.transactionTime).HasColumnName("transactionTime");
                 entity.Property(e => e.fromAccountBalance).HasColumnName("fromAccountBalance");
                 entity.Property(e => e.toAccountBalance).HasColumnName("toAccountBalance");

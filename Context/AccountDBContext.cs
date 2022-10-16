@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace BankingWebAPI.Models
+namespace BankingWebAPI.Context
 {
     public partial class AccountDBContext : DbContext
     {

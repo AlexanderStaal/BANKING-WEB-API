@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace BankingWebAPI.Models
+namespace BankingWebAPI.Context
 {
     public partial class TransferFundsDBContext : DbContext
     {
@@ -33,8 +33,8 @@ namespace BankingWebAPI.Models
             {
 
                 entity.ToTable("TransferFunds");
-                entity.Property(e => e.accountFromNumber).HasColumnName("accountFromNumber");
-                entity.Property(e => e.accountToNumber).HasColumnName("accountToNumber");
+                entity.Property(e => e.fromAccountNumber).HasColumnName("fromAccountNumber");
+                entity.Property(e => e.toAccountNumber).HasColumnName("toAccountNumber");
                 entity.Property(e => e.amount).HasColumnName("amount");
 
             });

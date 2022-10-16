@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
-using BankingWebAPI.Models;
+using BankingWebAPI.Context;
 using BankingWebAPI.Data;
 using BankingWebAPI.Repositories;
 
@@ -44,7 +44,7 @@ namespace BankingWebAPI.Controllers
 
         [HttpPost]
         [Route("TransferFunds")]
-        public async Task<ActionResult> TransferFunds([FromBody] TransferFunds transferFundsRequest)
+        public async Task<IActionResult> TransferFunds([FromBody] TransferFunds transferFundsRequest)
         {
             var transaction = await _sPRepoitory.TransferFunds(transferFundsRequest);
 

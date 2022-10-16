@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 using System.Xml.Linq;
 
-namespace BankingWebAPI.Models
+namespace BankingWebAPI.Context
 {
     [Table("Users")]
     public class User
@@ -13,18 +13,13 @@ namespace BankingWebAPI.Models
         [Required]
         [DataMember(Name = "key")]
         [Key]
-        public string userId { get; set; }
+        public int Id { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
-        public string userRole { get; set; }
-    }
-
-    [Table("LoginStatus")]
-    public class LoginStatus
-    {
-        [Required]
-        [DataMember(Name = "key")]
-        [Key]
-        public string loginStatus { get; set; }
+        public string userName { get; set; }
+        public string password { get; set; }
+        public string token { get; set; }
+        public string role { get; set; }     
+        public string email { get; set; }
     }
 }

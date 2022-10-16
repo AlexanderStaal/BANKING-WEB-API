@@ -2,7 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace BankingWebAPI.Models
+
+namespace BankingWebAPI.Context
 {
     public partial class UsersDBContext : DbContext
     {
@@ -15,7 +16,7 @@ namespace BankingWebAPI.Models
         {
         }
 
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<User> User { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -30,11 +31,13 @@ namespace BankingWebAPI.Models
             modelBuilder.Entity<User>(entity =>
             {
                 entity.ToTable("Users");
-                entity.Property(e => e.userId).HasColumnName("UserId");
                 entity.Property(e => e.firstName).HasColumnName("FirstName");
                 entity.Property(e => e.lastName).HasColumnName("LastName");
-                entity.Property(e => e.userRole).HasColumnName("UserRole");
-
+                entity.Property(e => e.userName).HasColumnName("UserName");
+                entity.Property(e => e.role).HasColumnName("Role");
+                entity.Property(e => e.password).HasColumnName("Password");
+                entity.Property(e => e.token).HasColumnName("Token");
+                entity.Property(e => e.email).HasColumnName("Email");
             });
             OnModelCreatingPartial(modelBuilder);
         }

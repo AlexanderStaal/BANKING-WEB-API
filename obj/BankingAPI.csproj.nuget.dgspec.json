@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/alex/Projects/local/API/BankingAPI.csproj": {}
+    "/Users/alex/Projects/repo/BANKING-WEB-API/BankingAPI.csproj": {}
   },
   "projects": {
-    "/Users/alex/Projects/local/API/BankingAPI.csproj": {
+    "/Users/alex/Projects/repo/BANKING-WEB-API/BankingAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/alex/Projects/local/API/BankingAPI.csproj",
+        "projectUniqueName": "/Users/alex/Projects/repo/BANKING-WEB-API/BankingAPI.csproj",
         "projectName": "BankingAPI",
-        "projectPath": "/Users/alex/Projects/local/API/BankingAPI.csproj",
+        "projectPath": "/Users/alex/Projects/repo/BANKING-WEB-API/BankingAPI.csproj",
         "packagesPath": "/Users/alex/.nuget/packages/",
-        "outputPath": "/Users/alex/Projects/local/API/obj/",
+        "outputPath": "/Users/alex/Projects/repo/BANKING-WEB-API/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -51,23 +51,31 @@
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[6.0.9, )"
+              "version": "[6.0.10, )"
             },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
-              "version": "[6.0.9, )"
+              "version": "[6.0.10, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.9, )"
+              "version": "[6.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.9, )"
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.24.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.24.0, )"
             }
           },
           "imports": [
@@ -89,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     }
