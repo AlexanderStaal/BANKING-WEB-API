@@ -19,6 +19,10 @@ using Newtonsoft.Json;
 using BankingWebAPI.Context;
 using BankingWebAPI.Data;
 using BankingWebAPI.Repositories;
+using BankingWebAPI.Controllers;
+using BankingWebAPI.Models;
+using BankingWebAPI.Helper;
+using BankingWebAPI.Models;
 
 namespace BankingWebAPI
 {
@@ -35,20 +39,6 @@ namespace BankingWebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options =>
-                {
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuer = true,
-                        ValidateAudience = true,
-                        ValidateLifetime = true,
-                        ValidateIssuerSigningKey = true,
-                        ValidIssuer = Configuration["Jwt:Issuer"],
-                        ValidAudience = Configuration["Jwt:Audience"],
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
-                    };
-                });
 
 
             services.AddMvc(option => option.EnableEndpointRouting = false)
@@ -73,6 +63,34 @@ namespace BankingWebAPI
             services.AddDbContext<CreteAccountDBContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("BankingDB")));
 
+            var _userContext = services.BuildServiceProvider().GetService<UsersDBContext>();
+            services.AddSingleton<IRefreshTokenGenerator>(provider => new RefreshTokenGenerator(_userContext));
+
+
+            var _jwtsetting = Configuration.GetSection("JWTSetting");
+            services.Configure<JWTSetting>(_jwtsetting);
+
+            var authkey = Configuration.GetValue<string>("JWTSetting:securitykey");
+
+            services.AddAuthentication(item =>
+            {
+                item.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                item.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(item =>
+            {
+
+                item.RequireHttpsMetadata = true;
+                item.SaveToken = true;
+                item.TokenValidationParameters = new TokenValidationParameters()
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authkey)),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.MaxValue
+                };
+            });
 
             services.AddScoped<ISPRepoitory, SPRepository>();
 

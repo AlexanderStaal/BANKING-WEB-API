@@ -1,4 +1,5 @@
 ﻿using System;
+using BankingWebAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -17,6 +18,10 @@ namespace BankingWebAPI.Context
         }
 
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Refreshtoken> Refreshtoken { get; set; }
+        public virtual DbSet<Permission> Permission { get; set; }
+        public virtual DbSet<Menu> Menu { get; set; }
+        public virtual DbSet<Role> Role { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -39,6 +44,71 @@ namespace BankingWebAPI.Context
                 entity.Property(e => e.token).HasColumnName("Token");
                 entity.Property(e => e.email).HasColumnName("Email");
             });
+
+
+            modelBuilder.Entity<Refreshtoken>(entity =>
+            {
+                entity.HasKey(e => e.UserId);
+
+                entity.ToTable("tbl_refreshtoken");
+
+                entity.Property(e => e.UserId)
+                    .HasMaxLength(32)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.TokenId)
+                    .HasMaxLength(32)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Permission>(entity =>
+            {
+                entity.HasKey(e => new { e.RoleId, e.MenuId });
+
+                entity.ToTable("tbl_permission");
+
+                entity.Property(e => e.RoleId)
+                    .HasMaxLength(32)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.MenuId)
+                    .HasMaxLength(32)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Menu>(entity =>
+            {
+                entity.ToTable("tbl_menu");
+
+                entity.Property(e => e.Id)
+                    .HasMaxLength(32)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LinkName)
+                    .HasMaxLength(32)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(32)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Role>(entity =>
+            {
+                entity.HasKey(e => e.Roleid);
+
+                entity.ToTable("tbl_role");
+
+                entity.Property(e => e.Roleid)
+                    .HasColumnName("roleid")
+                    .HasMaxLength(32)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(32)
+                    .IsUnicode(false);
+            });
+
             OnModelCreatingPartial(modelBuilder);
         }
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 using System.Xml.Linq;
 
-namespace BankingWebAPI.Context
+namespace BankingWebAPI.Models
 {
     [Table("Users")]
     public class User

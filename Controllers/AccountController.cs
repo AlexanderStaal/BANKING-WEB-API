@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using BankingWebAPI.Context;
 using BankingWebAPI.Data;
 using BankingWebAPI.Repositories;
+using BankingWebAPI.Models;
 
 namespace BankingWebAPI.Controllers
 {

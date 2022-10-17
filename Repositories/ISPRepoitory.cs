@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using BankingWebAPI.Context;
+using BankingWebAPI.Models;
 
 namespace BankingWebAPI.Data
 {

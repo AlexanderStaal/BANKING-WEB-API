@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using BankingWebAPI.Context;
 using BankingWebAPI.Data;
 using BankingWebAPI.Repositories;
+using BankingWebAPI.Models;
 
 namespace BankingWebAPI.Repositories
 {
@@ -44,7 +45,7 @@ namespace BankingWebAPI.Repositories
         public async Task<TransferFundsStatus> TransferFunds(TransferFunds transferFunds)
         {
 
-            var result = await _transferFundsContext.TransferFundsStatus.FromSqlInterpolated($"exec TransferFunds @accountFromNumber={transferFunds.fromAccountNumber}, @accountToNumber={transferFunds.toAccountNumber}, @amount={transferFunds.amount}").ToListAsync();
+            var result = await _transferFundsContext.TransferFundsStatus.FromSqlInterpolated($"exec TransferFunds @fromAccountNumber={transferFunds.fromAccountNumber}, @toAccountNumber={transferFunds.toAccountNumber}, @amount={transferFunds.amount}").ToListAsync();
 
             if (result != null)
             {
