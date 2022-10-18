@@ -311,3 +311,5 @@
 /Users/alex/Projects/repo/BANKING-WEB-API/obj/Debug/net6.0/BankingAPI.genruntimeconfig.cache
 /Users/alex/Projects/repo/BANKING-WEB-API/obj/Debug/net6.0/ref/BankingAPI.dll
 /Users/alex/Projects/repo/BANKING-WEB-API/bin/Debug/net6.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/alex/Projects/repo/BANKING-WEB-API/bin/Debug/net6.0/Humanizer.dll
+/Users/alex/Projects/repo/BANKING-WEB-API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll

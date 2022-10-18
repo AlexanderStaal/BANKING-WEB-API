@@ -27,6 +27,15 @@ namespace BankingWebAPI.Controllers
             _sPRepoitory = sPRepoitory;
         }
 
+
+        [HttpGet]
+        [Route("TestAPI")]
+        [AllowAnonymous]
+        public async Task<IActionResult> TestAPI()
+        {
+            return Ok("SUCCESS");
+        }
+
         [HttpGet]
         [Route("GetAllAccounts")]
         [AllowAnonymous]

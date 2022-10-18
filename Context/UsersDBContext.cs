@@ -50,7 +50,7 @@ namespace BankingWebAPI.Context
             {
                 entity.HasKey(e => e.UserId);
 
-                entity.ToTable("tbl_refreshtoken");
+                entity.ToTable("Refreshtoken");
 
                 entity.Property(e => e.UserId)
                     .HasMaxLength(32)
@@ -65,7 +65,7 @@ namespace BankingWebAPI.Context
             {
                 entity.HasKey(e => new { e.RoleId, e.MenuId });
 
-                entity.ToTable("tbl_permission");
+                entity.ToTable("Permission");
 
                 entity.Property(e => e.RoleId)
                     .HasMaxLength(32)
@@ -78,7 +78,7 @@ namespace BankingWebAPI.Context
 
             modelBuilder.Entity<Menu>(entity =>
             {
-                entity.ToTable("tbl_menu");
+                entity.ToTable("Menu");
 
                 entity.Property(e => e.Id)
                     .HasMaxLength(32)
@@ -97,7 +97,7 @@ namespace BankingWebAPI.Context
             {
                 entity.HasKey(e => e.Roleid);
 
-                entity.ToTable("tbl_role");
+                entity.ToTable("Role");
 
                 entity.Property(e => e.Roleid)
                     .HasColumnName("roleid")
